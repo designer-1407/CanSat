@@ -1,0 +1,104 @@
+<!DOCTYPE html> <html>  
+   <head><meta name= "viewport " content= "width=device-width, initial-scale=1.0, user-scalable=no ">    
+   <title>CanSat telemetry</title>  
+   <style>html { font-family: 'Open Sans', sans-serif; display: block; margin: 0px auto; text-align: center;color: #333333;}  
+   body{margin: 15px auto 15px;}  
+   h1 {margin: 15px auto 15px;}  
+   table, td{font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size: 13px;border-collapse: collapse;text-align: center;margin: 2px auto 2px;}
+   th {background: #4a89c0;color: white;padding: 10px 10px;}
+    th, td{border-style: solid;border-width: 0 1px 1px 0;border-color: white;}
+    td {background: #D8E6F3;font-size: 15px;}
+    /*******************КНОПКИ********************/
+
+    
+.floating-button {
+  text-decoration: none;
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 50px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #4a89c0;
+  /*box-shadow: 0 8px 15px rgba(0, 0, 0, .1);*/
+  transition: .3s;
+}
+.floating-button:hover {
+  background: #fd3c3c;
+
+  color: white;
+
+}
+   </style>  
+   </head>
+   
+   <script> 
+    setInterval(loadDoc,200); 
+    function loadDoc() { 
+    var xhttp = new XMLHttpRequest(); 
+    xhttp.onreadystatechange = function() { 
+    if (this.readyState == 4 && this.status == 200) { 
+    document.getElementById("webpage").innerHTML =this.responseText} 
+    }; 
+    xhttp.open("GET", "/", true); 
+    xhttp.send(); 
+    } 
+    </script> 
+
+   <body>  
+  
+   <div id= "webpage ">  
+  
+   <h1>Real time telemetry 
+    17.05.2021
+   </h1>  
+   <div class= "data ">  
+        
+    <table id="telemetry">
+<tr>
+  <th>Time</th>
+  <th>Coordinates</th>
+  <th>Atmosphere pressure</th>
+  <th>Gyroscope X rad/s</th>
+  <th>Gyroscope Y rad/s</th>
+  <th>Gyroscope Z rad/s</th>
+  <th>Accelerometer X m/s^2</th>
+  <th>Accelerometer Y m/s^2</th>
+  <th>Accelerometer Z m/s^2</th>
+  <th>Magnetometer X</th>
+  <th>Magnetometer Y</th>
+  <th>Magnetometer Z</th>
+  <th>Temperature °C</th>
+  
+  </tr>
+ <tr>
+  <td>40.8</td>
+  <td>20.3</td>
+  <td>30.5</td>
+  <td>23.5</td>
+  <td>40.3</td>
+  <td>41.8</td>
+  <td>20.3</td>
+  <td>30.5</td>
+  <td>23.5</td>
+  <td>40.3</td>
+  <td>42.8</td>
+  <td>20.3</td>
+  <td>30.5</td>
+ </tr>
+</table>
+
+<a href="/start" class="floating-button">START</a>
+
+<a href="/results" class="floating-button">RESULTS</a>
+
+   </div>  
+   </body>  
+   </html>  
